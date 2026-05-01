@@ -1,11 +1,11 @@
 // Agent Orchestrator — LangGraph-style state machine pipeline
-import { createIncident, AgentStage } from '../types/schemas.js';
-import { ErrorIngestionAgent } from './errorIngestion.js';
-import { RootCauseAgent } from './rootCause.js';
-import { PatchWriterAgent } from './patchWriter.js';
-import { ConfidenceGate } from './confidenceGate.js';
-import { ContextReader, DeployMesh, ShadowDeploy } from './deployFabric.js';
-import { contextRelay } from '../services/contextRelay.js';
+import { createIncident, AgentStage } from '../src/types/schemas.js';
+import { ErrorIngestionAgent } from '../src/agents/errorIngestion.js';
+import { RootCauseAgent } from '../src/agents/rootCause.js';
+import { PatchWriterAgent } from '../src/agents/patchWriter.js';
+import { ConfidenceGate } from '../src/agents/confidenceGate.js';
+import { ContextReader, DeployMesh, ShadowDeploy } from '../src/agents/deployFabric.js';
+import { contextRelay } from '../src/services/contextRelay.js';
 
 export class Orchestrator {
   constructor(broadcastFn) {
