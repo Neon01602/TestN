@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: forge-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: CORS_ORIGINS
+        sync: false   # You'll paste your Vercel frontend URL here in Render dashboard
